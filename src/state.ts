@@ -1,6 +1,6 @@
 import {createInterface, type Interface} from "readline";
 import { getCommands } from "./commands.js";
-import { PokeAPI } from "./pokeapi.js";
+import { PokeAPI, Pokemon } from "./pokeapi.js";
 
 
 // shared state object passed to commands and repl
@@ -8,6 +8,7 @@ export interface State {
     rl: Interface;
     commands: Record<string,CLICommand>;
     pokeAPI: PokeAPI;
+    caughtPokemon: Record<string, Pokemon>;
     nextLocationsURL: string;
     prevLocationsURL: string;
 
@@ -36,6 +37,7 @@ export function initState(cacheInterval: number): State {
         pokeAPI: new PokeAPI(cacheInterval),
         nextLocationsURL: "",
         prevLocationsURL: "",
+        caughtPokemon:{}
         
     };
 }
