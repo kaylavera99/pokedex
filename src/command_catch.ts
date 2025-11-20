@@ -6,7 +6,13 @@ export async function commandCatch(state: State, ...args: string[]) {
     throw new Error("you must provide a pokemon name");
   }
 
-  const name = args[0];
+  const name = args[0].toLowerCase();
+
+  // Guard clause for already caught pokemon
+  if (state.caughtPokemon[name]) {
+    console.log(`${name} is already in your Pokedex.`);
+    return;
+  }
   const pokemon = await state.pokeAPI.fetchPokemon(name);
 
   console.log(`Throwing a Pokeball at ${pokemon.name}...`);

@@ -1,6 +1,5 @@
 import { State } from "./state";
 
-
 export async function commandInspect(state: State, ...args: string[]) {
     // if no pokemon name is provided, throw an error
     if (args.length !== 1) {

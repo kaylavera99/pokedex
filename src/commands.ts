@@ -5,6 +5,7 @@ import { commandInspect } from "./command_inspect.js";
 import {commandMapForward, commandMapBack} from "./command_map.js";
 import { CLICommand } from "./state.js";
 import { commandCatch } from "./command_catch.js";
+import { commandPokedex } from "./command_pokedex.js";
 
 // cli command registry
 export function getCommands(): Record<string, CLICommand> {
@@ -44,6 +45,11 @@ export function getCommands(): Record<string, CLICommand> {
             name: "inspect <pokemon_name>",
             description: "Inspect a caught pokemon from your pokedex",
             callback: commandInspect
+        },
+        pokedex: {
+            name: "pokedex",
+            description: "List all caught pokemon in your pokedex",
+            callback: commandPokedex
         }
 
     };
