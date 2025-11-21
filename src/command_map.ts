@@ -10,7 +10,7 @@ export async function commandMapForward(state: State){
     state.prevLocationsURL = locations.previous;
 
     for (const loc of locations.results) {
-        console.log(`${loc.name}`);
+        console.log(`- ${loc.name}`);
     }   
 }
 

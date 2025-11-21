@@ -11,7 +11,8 @@ export async function commandInspect(state: State, ...args: string[]) {
     
     // if pokemon is not found in caughtPokemon state, notify user
     if (!pokemon) {
-        console.log(`${name} is not in your Pokedex. Catch it first!`);
+        console.log(`${name} is not in your Pokedex. Catch it first using the inspect command!`);
+        console.log(`Usage: inspect <pokemon-name>`);
         return;
     }
     // display pokemon details
